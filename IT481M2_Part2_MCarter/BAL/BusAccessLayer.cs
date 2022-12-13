@@ -33,6 +33,7 @@ namespace IT481M2_Part2_MCarter.BAL
                 return dt;
             }
 
+            // create a new instance of the DataAccessLayer class
             DataAccessLayer dataAccessLayer = new DataAccessLayer(bserver, bdatabase, buser, bpass, btable);
 
             // call the SelectClients() method on the DataAccessLayer instance
@@ -52,18 +53,19 @@ namespace IT481M2_Part2_MCarter.BAL
             // check the user's name and only allow them to access the table they are authorized to access
             if (user == "User_HR" && table != "Employees")
             {
-                return "Not Allowed";
+                return "Not Alowed";
             }
             else if (user == "User_Sales" && table == "Employees")
             {
                 return "Not Allowed";
             }
+
             // create a new instance of the DataAccessLayer class
             DataAccessLayer dataAccessLayer = new DataAccessLayer(bserver, bdatabase, buser, bpass, btable);
 
             // call the CountClients() method on the DataAccessLayer instance
             // and return the results as a string
             return dataAccessLayer.CountClients();
-        }
+        }    
     }
 }
